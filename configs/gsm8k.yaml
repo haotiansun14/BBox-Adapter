@@ -1,0 +1,64 @@
+task: GSM8K
+train_ratio: # determined by dataset
+
+seed: 42
+
+# MODEL
+generator_model: gpt-3.5-turbo
+
+critic_model: microsoft/deberta-v3-large
+add_special_tokens: True
+
+# MODE
+critic_mode: classification # generation / classification
+score_mode: # None / sum_logits / log_prob / neg_ppl / mean_logits
+
+# SEARCH PARAMS
+beam_size: 3
+num_candidates: 10 
+max_length: 15
+early_stopping: True
+only_eval_answers: False
+
+# QUERY_PARAMS
+temperature: 1.0
+frequency_penalty: 0 
+presence_penalty: 0 
+stop: ["\n", "\n\n", "\n\n\n"]
+max_tokens: 80
+
+# TRAINING_PARAMS
+## offline warmup
+offline_warmup_path: # set this to empty is offline warmup is undesired 
+num_epochs_offline_warmup: 1
+
+## blackbox warmup
+use_blackbox_warmup: True
+num_epochs_blackbox_warmup: 2
+num_candidates_blackbox_warmup: 5
+
+## online finetuning
+num_online_finetuning_repeat: 1
+
+num_epochs: 2 
+batch_size: 14 
+gradient_accumulation_steps: 3 
+
+
+l2_reg_coef: 1.
+energy_temp: 5.
+warmup_steps: 50
+learning_rate: 5.E-6
+min_lr: 5.E-6
+T_lr: 1000
+
+use_outcome_supervision: True
+num_negatives_for_training: 1
+qa_template: "Q: <Q>\nA: Let's think step by step.\n<A>"
+
+# EVALUATION
+eval_blackbox: True
+eval_unfinetuned: False
+num_eval_rounds: 1
+
+log_with_wandb: True
