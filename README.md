@@ -65,7 +65,8 @@ We fine-tune davinci as the judge model for TruthfulQA. Please follow the instru
 ## Citation
 If you find our work helpful, please consider citing our paper:
 
-```@misc{sun2024bboxadapter,
+```
+@misc{sun2024bboxadapter,
       title={BBox-Adapter: Lightweight Adapting for Black-Box Large Language Models}, 
       author={Haotian Sun and Yuchen Zhuang and Wei Wei and Chao Zhang and Bo Dai},
       year={2024},
