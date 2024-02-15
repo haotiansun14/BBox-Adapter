@@ -1,6 +1,6 @@
 # BBox-Adapter
 
-[Arxiv] [BBox-Adapter: Lightweight Adapting for Black-Box Large Language Models](https://arxiv.org/abs/2402.08219)
+[arXiv] [BBox-Adapter: Lightweight Adapting for Black-Box Large Language Models](https://arxiv.org/abs/2402.08219)
 
 [Website] [BBox-Adapter Project](https://haotiansun14.github.io/BBox-Adapter-page/)
 
